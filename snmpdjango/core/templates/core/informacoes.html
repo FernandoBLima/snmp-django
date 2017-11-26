@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SNMP Client</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Load the path to your static files -->
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'index/style.css' %}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="/">HOME</a>
+  <!--<a href="/django-form">Informações</a>-->
+  <!--<a href="#">Link</a>-->
+</div>
+
+<div class="content">
+   <div class="page-header">
+        <div class="col-sm-4">
+                <!--<img  src="static/index/images/Poliupe.png" width="200px" height="200px">-->
+        </div>
+        <div class="col-sm-8">
+                <h1><a >Aplicação utilizando protocolo SNMP</a></h1>
+        </div>
+   </div>
+</div>
+
+<div class="content form-padding">
+    <h5>Grupo: Fernando Lima, Oto, Rodrigo, Luiza</h5>
+  <h6>Disciplina: Gerenciamento de Redes</h6>
+  <h6>Professor: Edison de Queiroz Albuquerque</h6>
+</div>
+<div class="content form-padding">
+  <h6>1 - O que é SNMP?</h6>
+  <p>O SNMP é um conjunto de protocolos onde máquinas na rede local podem ser designadas como gerentes ou agentes. A máquina gerente pode transmitir mensagens SNMP via TCP ou UDP para os agentes e processar sua resposta. A máquina gerente pode, ainda, receber mensagens espontâneas dos agentes, as quais são denominadas Traps. Desta forma, a máquina gerente é capaz de facilmente monitorar o funcionamento de diversos agentes na rede local, tanto de forma ativa como de forma passiva.
+O SNMP costuma estar encapsulado em pacotes de software voltados à gerência de redes, mas não é incomum que o gerente necessite escrever um script para auxiliar na construção de uma solução para seu problema específico.
+Para identificar um objeto da rede, o SNMP faz uso de da MIB (Management Information Base), a qual consiste em uma árvore hierárquica que separa os tipos de informação a serem buscados, e o OID  (Object Identifier), que identifica um tipo determinado de objeto em um agente alvo. Com objeto, queremos dizer um componente como a placa de rede, a memória, o cooler, etc.
+A MIB e os OIDs são conhecidos a priori e tabelados, de maneira que o usuário do SNMP apenas necessita configurar os agentes e consultar as tabelas para montar a solução para seu problema de gerência.
+Isto torna o SNMP especialmente útil no caso de uma rede com muitos agentes, como, por exemplo, um datacenter. Em um datacenter real, é muito custoso monitorar manualmente cada componente de cada máquina da rede, então podemos configurar Traps SNMP que enviam alertas para o gerente no caso de falha em determinado componente, evitando assim riscos e cortando gastos com manutenção.
+Uma das maiores vantagens do SNMP reside no fato de que o processamento e armazenamento de dados são delegados para a máquina gerente, o que faz com que se economize esforço de processamento.</p>
+</div>
+
+<div class="content form-padding">
+  <h6>2 - Esquema</h6>
+  <div class="content text-center">
+
+  <img class="text-center" src="/static/index/esquema.jpg">
+</div>
+</div>
+
+<div class="content form-padding">
+  <h6>3 - Estrutura da Mensagem SNMP</h6>
+  <div class="content text-center">
+  <img class="text-center" src="/static/index/snmp.jpg">
+</div>
+</div>
+
+
+<div class="content form-padding">
+  <h6>4 - Nossa solução</h6>
+    <p>A partir do script base em Python que envia uma mensagem SNMP para um agente, desenvolvemos uma interface gráfica utilizando o framework django. Ela recebe as opções do usuário em um formulário e as envia como entrada para o script no back-end, recebendo o retorno do agente e escrevendo-o no front-end para o usuário.
+</div>
+</div>
+
+
+
+<div class="content form-padding">
+  <h6>Referências Bibliográficas</h6>
+  <p>
+[1]	https://www.opservices.com.br/snmp/ acessado em 21/11/2017 às 19:41
+<br>
+[2] https://www.telcomanager.com/pt-br/blog/o-que-e-snmp acessado em 21/11/2017 às 20:12
+</p>
+</div>
+</body>
+</html>
